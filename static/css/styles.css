@@ -1,22 +1,25 @@
 
   
 .outer_box {
-    width: 1220px;
+    width: 1100px;
     height: 300px;  
     padding: 50px;
-    border: 3px solid yellow;
+    border: 3px solid black;
+    border-radius: 15px;
     margin-top:50px ;
-    background-color: saddlebrown;
+    background-color: white;
     overflow: hidden;
     margin-bottom: 10px;
     
 }
 .inner_right_box {
   width: 700px;
-  height: 250px;
+  height: 150px;
   /* border: 1px solid blue; */
   float:right;
   position: relative;
+  overflow: hidden;
+  
   
   
 }
@@ -29,14 +32,42 @@
 }
 .circle {
   border-radius: 50%;
-  border: 1px solid red;
+  border: 1px solid black;
   float: left;
   width: 200px;
   height: 200px;
   vertical-align: middle;
   position: relative;
   background-color: gray;
+  box-shadow: 1px 20px 50px rgb(36, 35, 35);
   
+}
+
+.button {
+
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button:hover {
+  background-color: #555555;
+  color: white;
+  box-shadow: 0px 10px 10px 0px black;
   
-  
+}
+
+.tm_btn {
+  float: right;
+  text-align:right;
 }

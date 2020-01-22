@@ -15,6 +15,7 @@ models = [
      'image':'sentiment.png'
 
     }
+    
 ]
 
 @app.route('/',methods=['POST','GET'])

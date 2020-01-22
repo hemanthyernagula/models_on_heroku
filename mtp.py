@@ -75,7 +75,7 @@ def test_your_data(sent):
         bow_  = bow_sent_vector.transform([cl_sent])
         final_vect = hstack((bow_,tfidf_,nw,np_,em,qm,mwl,nc)).tocsr()
         pred = model.predict(final_vect)
-        print('\n'*50,model,'\n'*50)
+        # print('\n'*50,model,'\n'*50)
         return pred[0]
    
 if __name__=="__main__":

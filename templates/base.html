@@ -14,13 +14,20 @@
         <title>ML-Model</title>
     {% endif %}
   </head>
-  <body background="{{ url_for('static', filename='solid.png') }}">
+  <body>
     <div>
-        <div class="head">
-
-        </div>
+        <div>
+            <ul>
+                <li class="title"> {{ title }}</li>
+                <li><a class="button shiny" href="#"> Hire Me</a></li>
+                <li><a class="button" href="{{ url_for('home') }}"> Home</a></li>
+            </ul>
+          </div>
         <div class="container">
+           
+          
         {% block content %}
+        
         {% endblock %}
         </div>
     

@@ -1,28 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>My Projects</h1>
-    <div class="outer_box">
-        
-            <img class="circle" src="{{ url_for('static', filename='sentiment.png') }} ">
-        
-        <div class="inner_right_box">
-            <p> 
-                This is Summary of the model
-                This is Summary of the model
-                This is Summary of the model
-                This is Summary of the model
-                This is Summary of the model
-                This is Summary of the model
-                This is Summary of the model
-                This is Summary of the model
-                This is Summary of the model
-                This is Summary of the model
-                This is Summary of the model
-                
-            </p>
-            
+    
+    
+    
+    {% for model in models %}
+        <div class="outer_box">
+                <img class="circle" src="{{ url_for('static', filename='sentiment.png') }} ">
+            <div class="inner_right_box">
+                <p> 
+                    {{ model.description }}
+                </p>
+            </div>
+            <h1 class="project_title">{{ model.title }}</h1>
+            <a class="button tm_btn" href="{{ url_for('sentiment') }}">Test Model</a>
         </div>
-        
-        <button class="button tm_btn">Test Model</button>
-    </div>
+    {% endfor %}
 {% endblock content %}

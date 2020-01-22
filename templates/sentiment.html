@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    <form method="POST" action="/sentiment">
+            {{ form.hidden_tag() }}
+            <div class="outer_box">
+                    
+                    {{ form.review.label }}
+                    {% if form.review.errors %}
+                        {{ form.review }}
+                        {% for  error in form.review.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    {% else %}
+                        {{ form.review }}
+                    {% endif %}
+                    
+                        {{ form.submit }}
+                    <div class="inner_right_box">
+                            {% if label %}
+                                <!-- <p>{{ review,label }}</p> -->
+                                <div class="alert alert-{{ label[1] }}">
+                                        <p>{{ label[0] }} Review</p></div>
+                            {% endif %}
+                    </div>
+            </div>
+    </form>
+{% endblock %}

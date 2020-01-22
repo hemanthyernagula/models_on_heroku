@@ -1,8 +1,9 @@
 import re
-import os
 import pickle
 import numpy as np
 from scipy.sparse import hstack
+from sklearn.linear_model import  LogisticRegression
+from sklearn.feature_extraction.text import TfidfVectorizer,CountVectorizer
 
 normal_mwl        =pickle.load(open('models_on_heroku/data/pkls/mtp/normal_mwl.pkl','rb'))
 normal_qm         =pickle.load(open('models_on_heroku/data/pkls/mtp/normal_qm.pkl','rb'))
@@ -74,6 +75,7 @@ def test_your_data(sent):
         bow_  = bow_sent_vector.transform([cl_sent])
         final_vect = hstack((bow_,tfidf_,nw,np_,em,qm,mwl,nc)).tocsr()
         pred = model.predict(final_vect)
+        print('\n'*50,model,'\n'*50)
         return pred[0]
    
 if __name__=="__main__":
